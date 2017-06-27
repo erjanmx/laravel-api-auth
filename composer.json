@@ -1,6 +1,13 @@
 {
     "name": "erjanmx/laravel-api-auth",
-    "description": "Auth",
+    "description": "Dead simple Laravel api authorization middleware",
+    "keywords": [
+        "laravel",
+        "middleware",
+        "token",
+        "auth",
+        "api"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [

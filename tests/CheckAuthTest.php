@@ -31,11 +31,11 @@ class CheckAuthTest extends \PHPUnit_Framework_TestCase
             ->method('getConfigs')
             ->with(self::TEST_SERVICE)
             ->willReturn([
-                'token' => $params['token'] ?: 'test-token',
-                'tokenName' => $params['tokenName'] ?: 'api_token',
-                'allowJsonToken' => $params['allowJsonToken'] ?: false,
-                'allowBearerToken' => $params['allowBearerToken'] ?: false,
-                'allowRequestToken' => $params['allowRequestToken'] ?: false,
+                'token' => isset($params['token']) ? $params['token'] : 'test-token',
+                'tokenName' => isset($params['tokenName']) ? $params['tokenName'] : 'api_token',
+                'allowJsonToken' => isset($params['allowJsonToken']) ? $params['allowJsonToken'] : false,
+                'allowBearerToken' => isset($params['allowBearerToken']) ? $params['allowBearerToken'] : false,
+                'allowRequestToken' => isset($params['allowRequestToken']) ? $params['allowRequestToken'] : false,
             ]);
     }
 

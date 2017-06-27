@@ -1,0 +1,26 @@
+{
+    "name": "erjanmx/laravel-api-auth",
+    "description": "Auth",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "erjanmx",
+            "email": "erjanmx@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Apiauth\\Laravel\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Apiauth\\Laravel\\": "tests"
+        }
+    }
+}

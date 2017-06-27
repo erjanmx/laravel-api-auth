@@ -20,7 +20,7 @@ class CheckAuth
     public function handle($request, Closure $next, $service)
     {
         if (! $this->authorized($request, $service)) {
-            return response(self::CODE, self::MESSAGE);
+            return response()->json(['message' => self::MESSAGE], self::CODE);
         }
 
         return $next($request);

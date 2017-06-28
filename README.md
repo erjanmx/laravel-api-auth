@@ -67,7 +67,7 @@ Route::group(['prefix' => 'v1', 'middleware' => ['apiauth:REMOTE_APP']], functio
 
 #### That's all
 
-Your urls within your middleware is accessible only if the valid token is provided
+Your urls within your group is accessible only if valid token is provided
 
 - In `GET` or `POST` request
 - In request header as `Authorization Bearer`

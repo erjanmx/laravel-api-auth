@@ -20,6 +20,8 @@ Configure the Service Provider
 // /config/app.php
 
 'providers' => [
+    // other providers
+    
     Apiauth\Laravel\CAuthServiceProvider::class
 ],
 
@@ -38,14 +40,16 @@ $ php artisan vendor:publish --provider="Apiauth\Laravel\CAuthServiceProvider"
 
 Change defaults in `config/apiauth.php` setting
 
-- a service name of your remote application name that will connect to your laravel app i.e **REMOTE_APP**
-- service token key so it will point to your token in `.env` file i.e **REMOTE_APP_TOKEN**
+- a service name of your remote application name that will connect to your laravel app for example **REMOTE_APP**
+- service token key so it will point to your token in `.env` file for example **REMOTE_APP_TOKEN**
 
 #### Step 2
 
 - Add your remote app token in `.env` file
 ```
 // .env
+
+...your other variables
 
 REMOTE_APP_TOKEN=<secret-token>
 ```
@@ -67,7 +71,7 @@ Your urls within your middleware is accessible only if the valid token is provid
 
 - In `GET` or `POST` request
 - In request header as `Authorization Bearer`
-- In json raw body
+- In `json` raw body
 
 You're free to change token name (`api_token` by default) in configuration file as well as
 authorization methods to be checked. 

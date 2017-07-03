@@ -1,3 +1,9 @@
+<!--
+  Title: Laravel API-Auth
+  Description: Dead simple Laravel api authorization middleware
+  Author: erjanmx
+  -->
+  
 [![Build Status](https://travis-ci.org/erjanmx/laravel-api-auth.svg?branch=master)](https://travis-ci.org/erjanmx/laravel-api-auth)
 [![Latest Stable Version](https://poser.pugx.org/erjanmx/laravel-api-auth/v/stable)](https://packagist.org/packages/erjanmx/laravel-api-auth) 
 [![Total Downloads](https://poser.pugx.org/erjanmx/laravel-api-auth/downloads)](https://packagist.org/packages/erjanmx/laravel-api-auth)

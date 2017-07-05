@@ -10,7 +10,7 @@
 
 # Laravel Api Auth
 
-Laravel gives easy ways to handle api authorization using user based tokens, but sometimes you need to use a single token to give access to your application, especially when you're developing two apps that need to be connected.
+Laravel gives easy ways to handle api authorization using user based tokens, but sometimes you need to use a single token to give access to your application, especially when you're developing two apps that need to be connected, or perhaps you're in need of connecting Telegram-bot to your app endpoint using webhooks
 
 Laravel-api-auth makes that easy as breathe, no migrations, no models
 

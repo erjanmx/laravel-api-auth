@@ -16,20 +16,11 @@ Laravel-api-auth makes that easy as breathe, no migrations, no models
 
 ### Installing package
 
+If you're using Laravel prior to 5.5, consider using [v0.1](https://github.com/erjanmx/laravel-api-auth/tree/v0.1) branch
+
 ```bash
 $ composer require erjanmx/laravel-api-auth
 ```
-
-Configure the Service Provider
-
-```php
-// /config/app.php
-
-'providers' => [
-    // other providers
-    
-    Apiauth\Laravel\CAuthServiceProvider::class
-],
 
 ```
 

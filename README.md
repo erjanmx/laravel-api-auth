@@ -22,8 +22,6 @@ If you're using Laravel prior to 5.5, consider using [v0.1](https://github.com/e
 $ composer require erjanmx/laravel-api-auth
 ```
 
-```
-
 Publish the Package configuration
 
 ```bash

@@ -3,8 +3,8 @@
 return [
     'services' => [
         
-        'service-1' => [
-            'token' => env('SERVICE_1'),
+        'SERVICE_1_NAME' => [
+            'token' => 'SERVICE_1_TOKEN',
             'tokenName' => 'api_token',
 
             'allowJsonToken' => true,

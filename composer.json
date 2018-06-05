@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Apiauth\Laravel\CAuthServiceProvider"
+                "Apiauth\\Laravel\\CAuthServiceProvider"
             ]
         }
     }

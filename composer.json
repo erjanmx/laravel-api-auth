@@ -29,5 +29,12 @@
         "psr-4": {
             "Apiauth\\Laravel\\": "tests"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Apiauth\Laravel\CAuthServiceProvider"
+            ]
+        }
     }
 }

@@ -57,7 +57,7 @@ return [
 
 #### Step 2
 
-- Add your remote app token in `.env` file
+- Add your secret value in `.env` file
 ```
 // .env
 
@@ -68,9 +68,8 @@ MY_APP_TOKEN=my-secret
 
 #### Step 3
 
-- Add route group with middleware 
+- Add group with middleware in your routes file
 ```php
-// /routes/api.php
 
 Route::group(['prefix' => 'api', 'middleware' => ['apiauth:MY_APP']], function () { // note the `MY_APP` that should match the name in your config we changed above
     Route::any('/', function () {

@@ -78,16 +78,16 @@ Route::group(['prefix' => 'api', 'middleware' => ['apiauth:MY_APP']], function (
 });
 ```
 
-#### That's all
+#### That's it
 
-Your urls within your group is accessible only if valid token is provided
+Your urls within your group are accessible only if valid token provided
 
 - In `GET` or `POST` request
 
 ![image](https://user-images.githubusercontent.com/4899432/114033708-c649ee80-987d-11eb-9d81-5bb1505cb4a7.png)
 ![image](https://user-images.githubusercontent.com/4899432/114033620-b3371e80-987d-11eb-8548-39279a184645.png)
 
-- In request header as `Authorization Bearer`
+- In request header as `Authorization Bearer` (`tokenName` is ignored in this case)
 
 ![image](https://user-images.githubusercontent.com/4899432/114033931-027d4f00-987e-11eb-9809-2e34d9aae793.png)
 

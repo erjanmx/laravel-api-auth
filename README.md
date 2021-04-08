@@ -31,42 +31,70 @@ $ php artisan vendor:publish --provider="Apiauth\Laravel\CAuthServiceProvider"
 
 ## Using package
 
+
 #### Step 1
 
-Change defaults in `config/apiauth.php` setting
+Change defaults in `config/apiauth.php`
 
-- a service name of your remote application name that will connect to your laravel app for example **REMOTE_APP**
-- service token key so it will point to your token in `.env` file for example **REMOTE_APP_TOKEN**
+```php
+<?php
+
+return [
+    'services' => [
+
+        'MY_APP' => [                          // this is the name of the middleware of route group to be protected
+            'tokenName' => 'api_token',        // name of key that will be checked for secret value
+            'token' => env('MY_APP_TOKEN'),    // secret value that is retrieved from env vars and needs to be passed in requests in order to get access to your protected urls
+
+            'allowJsonToken' => true,        
+            'allowBearerToken' => true,        
+            'allowRequestToken' => true,       
+        ]
+    ],
+];
+
+```
 
 #### Step 2
 
-- Add your remote app token in `.env` file
+- Add your secret value in `.env` file
 ```
 // .env
 
 ...your other variables
 
-REMOTE_APP_TOKEN=<secret-token>
+MY_APP_TOKEN=my-secret
 ```
 
 #### Step 3
 
-- Add 'apiauth:**REMOTE_APP**' middleware to your routes
+- Add group with middleware in your routes file
 ```php
-// /routes/api.php
 
-Route::group(['prefix' => 'v1', 'middleware' => ['apiauth:REMOTE_APP']], function () {
-    // your routes
+Route::group(['prefix' => 'api', 'middleware' => ['apiauth:MY_APP']], function () { // note the `MY_APP` that should match the name in your config we changed above
+    Route::any('/', function () {
+        return 'Welcome!';
+    });
 });
 ```
 
-#### That's all
+#### That's it
 
-Your urls within your group is accessible only if valid token is provided
+Your urls within your group are accessible only if valid token provided
 
 - In `GET` or `POST` request
-- In request header as `Authorization Bearer`
+
+![image](https://user-images.githubusercontent.com/4899432/114033708-c649ee80-987d-11eb-9d81-5bb1505cb4a7.png)
+![image](https://user-images.githubusercontent.com/4899432/114033620-b3371e80-987d-11eb-8548-39279a184645.png)
+
+- In request header as `Authorization Bearer` (`tokenName` is ignored in this case)
+
+![image](https://user-images.githubusercontent.com/4899432/114033931-027d4f00-987e-11eb-9809-2e34d9aae793.png)
+
 - In `json` raw body
+
+![image](https://user-images.githubusercontent.com/4899432/114034101-2ccf0c80-987e-11eb-825b-409f62204e57.png)
+
 
 You're free to change token name (`api_token` by default) in configuration file as well as
 authorization methods to be checked. 
